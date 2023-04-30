@@ -5,7 +5,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -36,6 +35,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.photoalbum.ui.theme.PhotoAlbumTheme
 
+
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,31 +55,31 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun PhotoAlbumInterface(modifier: Modifier = Modifier) {
+fun PhotoAlbumInterface() {
     var result by remember { mutableStateOf(1) }
-    var photo_explian = R.string.photo_explian1
-    var imageResource = R.drawable.gz1
+    val photoExplanation: Int   //资源变量是id  Int类型
+    val imageResource: Int
     when (result) {
         1 -> { imageResource = R.drawable.gz1
-            photo_explian = R.string.photo_explian1 }
+             photoExplanation = R.string.photo_explian1 }
         2 -> { imageResource = R.drawable.gz2
-            photo_explian = R.string.photo_explian2 }
+             photoExplanation = R.string.photo_explian2 }
         3 -> { imageResource = R.drawable.gz3
-            photo_explian = R.string.photo_explian3 }
+             photoExplanation = R.string.photo_explian3 }
         4 -> { imageResource = R.drawable.gz4
-            photo_explian = R.string.photo_explian4 }
+             photoExplanation = R.string.photo_explian4 }
         5 -> { imageResource = R.drawable.gz5
-            photo_explian = R.string.photo_explian5 }
+             photoExplanation = R.string.photo_explian5 }
         6 -> { imageResource = R.drawable.gz6
-            photo_explian = R.string.photo_explian6 }
+             photoExplanation = R.string.photo_explian6 }
         7 -> { imageResource = R.drawable.gz7
-            photo_explian = R.string.photo_explian7 }
+             photoExplanation = R.string.photo_explian7 }
         8 -> { imageResource = R.drawable.gz8
-            photo_explian = R.string.photo_explian8 }
+             photoExplanation = R.string.photo_explian8 }
         9 -> { imageResource = R.drawable.gz9
-            photo_explian = R.string.photo_explian9 }
+             photoExplanation = R.string.photo_explian9 }
         else -> { imageResource = R.drawable.gz10
-            photo_explian = R.string.photo_explian10 }
+             photoExplanation = R.string.photo_explian10 }
     }
     Column(modifier = Modifier.fillMaxHeight()
         .fillMaxWidth()
@@ -91,7 +92,7 @@ fun PhotoAlbumInterface(modifier: Modifier = Modifier) {
 Box(modifier = Modifier.weight(6F)
     .fillMaxWidth()
     .padding(20.dp)){
-    Image(painter = painterResource(imageResource),
+    Image(painter = painterResource(id = imageResource),
         contentDescription = null,
         modifier = Modifier.fillMaxSize(),
         //contentScale = ContentScale.Inside
@@ -99,20 +100,18 @@ Box(modifier = Modifier.weight(6F)
             )
 }
         Spacer(Modifier.height(24.dp))
-        Text(text = stringResource(photo_explian),
+        Text(text = stringResource(id = photoExplanation),
             modifier = Modifier.weight(2F) //这里不选宽度是让整个文字居中，不然文字块全宽了还要设置里面
-            .align(Alignment.CenterHorizontally) //水平居中
-            .padding(top = 50.dp),
-
+            //.align(Alignment.CenterHorizontally) //水平居中
+            .padding(top = 50.dp)
+                .fillMaxWidth(),
             textAlign = TextAlign.Center, //字体居中
             fontWeight = FontWeight.Bold, //粗体
                 fontSize = 30.sp
-           // modifier = Modifier.align(Alignment.CenterHorizontally)
         )
        Spacer(Modifier.height(24.dp))
        Row(modifier = Modifier.weight(1F)
            .align(Alignment.CenterHorizontally)
-           //.align(Alignment.Center)
        ){
            Button(onClick =
            {
