@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">Photo Album</string>
-    <string name="photo_explian">Photo Album</string>
+    <string name="photo_explian1">Photo Album \n \n 随机图片第一张</string>
+    <string name="photo_explian2">Photo Album \n \n 随机图片第二张</string>
+    <string name="photo_explian3">Photo Album \n \n 随机图片第三张</string>
+    <string name="photo_explian4">Photo Album \n \n 随机图片第四张</string>
+    <string name="photo_explian5">Photo Album \n \n 随机图片第五张</string>
+    <string name="photo_explian6">Photo Album \n \n 随机图片第六张</string>
+    <string name="photo_explian7">Photo Album \n \n 随机图片第七张</string>
+    <string name="photo_explian8">Photo Album \n \n 随机图片第八张</string>
+    <string name="photo_explian9">Photo Album \n \n 随机图片第九张</string>
+    <string name="photo_explian10">Photo Album \n \n 随机图片第十张</string>
 </resources>
